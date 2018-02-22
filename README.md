@@ -9,7 +9,7 @@
 
 * Execute amount_change 
    ```
-   ruby amount_change
+   ruby amount_change.rb
    ```
 
 *  To test ccode
