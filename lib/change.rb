@@ -4,8 +4,12 @@ class Change
 
   # This method is used to validate input
   def self.change(amount)
-    raise ArgumentError.new("Invalid Amount. Amount should be positive number") if !amount.is_a?(Numeric) || amount < 0
-    self.calculate_change(amount)
+    begin
+      raise ArgumentError.new("Invalid Amount. Amount should be positive number") if !amount.is_a?(Numeric) || amount < 0
+      self.calculate_change(amount)
+    rescue Exception => e
+      puts e.message
+    end
   end
 
   # This method is used to calculate change recursively
