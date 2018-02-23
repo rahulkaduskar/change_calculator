@@ -10,7 +10,7 @@ RSpec.describe Change do
   end
 
   it "raise exception for invalid amount" do
-    expect { Change.change(-48) }.to raise_error(ArgumentError)
+    expect(Change.change(-48)).to eq("Invalid Amount. Amount should be positive number")
   end
 
   it "returns {:quarters=>1, :dimes=>1, :nickels=>1, :pennies=>1} for 41" do

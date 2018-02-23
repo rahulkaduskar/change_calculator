@@ -6,9 +6,9 @@ class Change
   def self.change(amount)
     begin
       raise ArgumentError.new("Invalid Amount. Amount should be positive number") if !amount.is_a?(Numeric) || amount < 0
-      self.calculate_change(amount)
+      return self.calculate_change(amount)
     rescue Exception => e
-      puts e.message
+      return  e.message
     end
   end
 
